@@ -61,7 +61,6 @@ def read_csv():
                         'latitude': float(row['latitude']),
                         'longitude': float(row['longitude'])
                     })
-        print(f"Letti {len(stazioni)} record dal CSV (solo regioni 1-20)")
         return stazioni
     except FileNotFoundError:
         print(f"File non trovato: {CSV_FILE}")

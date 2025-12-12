@@ -3,7 +3,7 @@ INSERT INTO abbonamento (nome_abbonamento, perc_offerta) VALUES
 ('Gold', 15),
 ('Platinum', 20);
 
-INSERT INTO passegero (codice_fiscale, num_cliente, email, password, nominativo) VALUES
+INSERT INTO passeggero (codice_fiscale, num_cliente, email, password, nominativo) VALUES
 ('RSSMRA80A01H501U', 'CLI001', 'mario.rossi@email.com', 'password123', 'Mario Rossi'),
 ('BNCGNN85B15F205X', 'CLI002', 'giulia.bianchi@email.com', 'password456', 'Giulia Bianchi'),
 ('VRDLCA90C20L219T', 'CLI003', 'luca.verdi@email.com', 'password789', 'Luca Verdi'),
@@ -79,3 +79,28 @@ INSERT INTO biglietto (cf_passeggero, id_corsa, id_abbonamento_attivo, prezzo, d
 ('FRNMLN91L01H501C', 1, NULL, 27.00, '2024-12-19 13:10:00');
 
 
+INSERT INTO punto_corsa (id_corsa, id_stazione, n_punto, tipologia, orario_arrivo, orario_partenza) VALUES
+(1, 3009, 0, 'Partenza','2024-12-20 08:00:00', '2024-12-20 08:00:00'),  
+(1, 2610, 1, 'Fermata', '2024-12-20 10:10:00', '2024-12-20 10:13:00'),
+(1, 2703, 2, 'Arrivo', '2024-12-20 15:20:00', '2024-12-20 15:20:00');
+
+INSERT INTO punto_corsa (id_corsa, id_stazione, n_punto, tipologia, orario_arrivo, orario_partenza) VALUES
+(2, 3699, 0, 'Partenza', '2024-12-20 10:30:00', '2024-12-20 10:30:00'),
+(2, 4152, 1, 'Fermata',  '2024-12-20 11:40:00', '2024-12-20 11:45:00'),
+(2, 4135, 2, 'Arrivo',   '2024-12-20 12:50:00', '2024-12-20 12:50:00');
+
+INSERT INTO punto_corsa (id_corsa, id_stazione, n_punto, tipologia, orario_arrivo, orario_partenza) VALUES
+(3, 3483, 0, 'Partenza', '2024-12-20 14:15:00', '2024-12-20 14:15:00'),
+(3, 4901, 1, 'Arrivo',   '2024-12-20 19:05:00', '2024-12-20 19:05:00');
+
+INSERT INTO punto_corsa (id_corsa, id_stazione, n_punto, tipologia, orario_arrivo, orario_partenza) VALUES
+(4, 4987, 0, 'Partenza', '2024-12-20 14:15:00', '2024-12-20 14:15:00'),
+(4, 4901, 1, 'Cambio',  '2024-12-20 16:00:00', '2024-12-20 16:03:00'),
+(4, 5141, 2, 'Arrivo',   '2024-12-20 19:05:00', '2024-12-20 19:05:00');
+
+INSERT INTO tratta (id_stazione_partenza, id_stazione_arrivo, id_mezzo, distanza_km, prezzo_fisso) VALUES
+(3009, 4135, 1, 570, 50.00), 
+(4135, 3009, 1, 570, 50.00), 
+(4135, 3699, 2, 220, 25.00), 
+(3699, 4135, 2, 220, 25.00), 
+(2703, 2610, 3, 100, 15.00);
